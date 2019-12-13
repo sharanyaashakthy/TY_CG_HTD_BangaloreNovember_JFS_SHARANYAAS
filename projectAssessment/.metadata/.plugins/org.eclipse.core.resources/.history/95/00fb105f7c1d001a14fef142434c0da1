@@ -1,0 +1,58 @@
+package com.capgemini.contactsimulator.dao;
+
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+import com.capgemini.contactsimulator.dto.ContactBean;
+
+public class ContactDAOImpl implements ContactDAO {
+	
+	//ContactBean bean = new ContactBean();
+	List<ContactBean> list = new ArrayList<ContactBean>();
+	
+	FileReader reader;
+	Properties prop;
+	ContactBean bean;
+
+		
+		@Override
+		public List<ContactBean> showAllContacts() {
+			return list;
+		}
+	
+
+	@Override
+	public ContactBean searchContact(String name) {
+        if(!list.isEmpty()) {
+        	return bean;
+		}
+		return null;
+	}
+
+	@Override
+	public boolean addContact(ContactBean bean) {
+		if(!list.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteContact(long number) {
+		if(!list.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean updateContact(long number) {
+		if(!list.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+
+}

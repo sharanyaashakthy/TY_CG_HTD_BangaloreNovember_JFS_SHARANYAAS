@@ -1,0 +1,5 @@
+package com.capgemini.contactsimulator.dto;
+
+public class Contact {
+
+}

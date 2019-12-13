@@ -1,0 +1,6 @@
+package com.capgemini.contactsimulator.services;
+
+public interface ContactServices {
+	
+
+}

@@ -1,0 +1,49 @@
+package com.capgemini.contactsimulator.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.capgemini.contactsimulator.dto.ContactBean;
+
+public class ContactDAOImpl implements ContactDAO {
+	
+	ContactBean bean = new ContactBean();
+	List<ContactBean> list = new ArrayList<ContactBean>();
+
+	@Override
+	public List<ContactBean> showAllContacts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactBean showContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean searchContact(String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addContact(long number) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteContact(long number) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateContact(long number) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

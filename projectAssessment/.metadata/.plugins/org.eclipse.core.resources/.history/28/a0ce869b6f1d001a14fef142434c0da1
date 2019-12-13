@@ -1,0 +1,14 @@
+package com.capgemini.contactsimulator.dao;
+
+import java.util.List;
+
+import com.capgemini.contactsimulator.dto.ContactBean;
+
+public interface ContactDAO {
+	public List<ContactBean> showAllContacts();
+	public ContactBean showContact();
+	public boolean searchContact(String name);
+	public boolean addContact(long number);
+	public boolean deleteContact(long number);
+	public boolean updateContact(long number);
+}

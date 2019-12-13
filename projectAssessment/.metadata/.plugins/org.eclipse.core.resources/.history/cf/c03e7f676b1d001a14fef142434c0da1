@@ -1,0 +1,10 @@
+package com.capgemini.contactsimulator.controller;
+
+public class ContactPredicate {
+
+	public static void testContact() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
