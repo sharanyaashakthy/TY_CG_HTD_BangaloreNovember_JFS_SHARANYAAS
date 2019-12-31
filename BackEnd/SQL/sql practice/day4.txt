@@ -1,0 +1,985 @@
+SQL> ed
+Wrote file afiedt.buf
+
+  1  select deptno from emp
+  2  group by deptno, sal
+  3* having sal = max(sal)
+SQL> /
+
+    DEPTNO                                                                                          
+----------                                                                                          
+        10                                                                                          
+        20                                                                                          
+        20                                                                                          
+        10                                                                                          
+        30                                                                                          
+        20                                                                                          
+        30                                                                                          
+        20                                                                                          
+        10                                                                                          
+        30                                                                                          
+        30                                                                                          
+        30                                                                                          
+
+12 rows selected.
+
+SQL> select 8 from emp;
+
+         8                                                                                          
+----------                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+         8                                                                                          
+
+14 rows selected.
+
+SQL> select * from emp;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO               
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------               
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20               
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30               
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30               
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20               
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30               
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30               
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10               
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20               
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30               
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20               
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30               
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20               
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10               
+
+14 rows selected.
+
+SQL> select ename, sal
+  2  from emp;
+
+ENAME             SAL                                                                               
+---------- ----------                                                                               
+SMITH             800                                                                               
+ALLEN            1600                                                                               
+WARD             1250                                                                               
+JONES            2975                                                                               
+MARTIN           1250                                                                               
+BLAKE            2850                                                                               
+CLARK            2450                                                                               
+SCOTT            3000                                                                               
+KING             5000                                                                               
+TURNER           1500                                                                               
+ADAMS            1100                                                                               
+JAMES             950                                                                               
+FORD             3000                                                                               
+MILLER           1300                                                                               
+
+14 rows selected.
+
+SQL> select ename, deptno
+  2  from emp;
+
+ENAME          DEPTNO                                                                               
+---------- ----------                                                                               
+SMITH              20                                                                               
+ALLEN              30                                                                               
+WARD               30                                                                               
+JONES              20                                                                               
+MARTIN             30                                                                               
+BLAKE              30                                                                               
+CLARK              10                                                                               
+SCOTT              20                                                                               
+KING               10                                                                               
+TURNER             30                                                                               
+ADAMS              20                                                                               
+JAMES              30                                                                               
+FORD               20                                                                               
+MILLER             10                                                                               
+
+14 rows selected.
+
+SQL> select job from emp;
+
+JOB                                                                                                 
+---------                                                                                           
+CLERK                                                                                               
+SALESMAN                                                                                            
+SALESMAN                                                                                            
+MANAGER                                                                                             
+SALESMAN                                                                                            
+MANAGER                                                                                             
+MANAGER                                                                                             
+ANALYST                                                                                             
+PRESIDENT                                                                                           
+SALESMAN                                                                                            
+CLERK                                                                                               
+CLERK                                                                                               
+ANALYST                                                                                             
+CLERK                                                                                               
+
+14 rows selected.
+
+SQL> select empno, ename
+  2  from emp;
+
+     EMPNO ENAME                                                                                    
+---------- ----------                                                                               
+      7369 SMITH                                                                                    
+      7499 ALLEN                                                                                    
+      7521 WARD                                                                                     
+      7566 JONES                                                                                    
+      7654 MARTIN                                                                                   
+      7698 BLAKE                                                                                    
+      7782 CLARK                                                                                    
+      7788 SCOTT                                                                                    
+      7839 KING                                                                                     
+      7844 TURNER                                                                                   
+      7876 ADAMS                                                                                    
+      7900 JAMES                                                                                    
+      7902 FORD                                                                                     
+      7934 MILLER                                                                                   
+
+14 rows selected.
+
+SQL> select ename, job from emp;
+
+ENAME      JOB                                                                                      
+---------- ---------                                                                                
+SMITH      CLERK                                                                                    
+ALLEN      SALESMAN                                                                                 
+WARD       SALESMAN                                                                                 
+JONES      MANAGER                                                                                  
+MARTIN     SALESMAN                                                                                 
+BLAKE      MANAGER                                                                                  
+CLARK      MANAGER                                                                                  
+SCOTT      ANALYST                                                                                  
+KING       PRESIDENT                                                                                
+TURNER     SALESMAN                                                                                 
+ADAMS      CLERK                                                                                    
+JAMES      CLERK                                                                                    
+FORD       ANALYST                                                                                  
+MILLER     CLERK                                                                                    
+
+14 rows selected.
+
+SQL> select sal from emp;
+
+       SAL                                                                                          
+----------                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1250                                                                                          
+      2975                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2450                                                                                          
+      3000                                                                                          
+      5000                                                                                          
+      1500                                                                                          
+      1100                                                                                          
+       950                                                                                          
+      3000                                                                                          
+      1300                                                                                          
+
+14 rows selected.
+
+SQL> select sal*12
+  2  from emp;ed
+  3  ed
+  4  ED
+  5  ;
+from emp;ed
+        *
+ERROR at line 2:
+ORA-00911: invalid character 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL*12 AS ANNUAL_SALARY 
+  2* FROM EMP;
+SQL> /
+FROM EMP;
+        *
+ERROR at line 2:
+ORA-00911: invalid character 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL*12 AS ANNUAL_SALARY 
+  2* FROM EMP
+SQL> /
+
+ANNUAL_SALARY                                                                                       
+-------------                                                                                       
+         9600                                                                                       
+        19200                                                                                       
+        15000                                                                                       
+        35700                                                                                       
+        15000                                                                                       
+        34200                                                                                       
+        29400                                                                                       
+        36000                                                                                       
+        60000                                                                                       
+        18000                                                                                       
+        13200                                                                                       
+        11400                                                                                       
+        36000                                                                                       
+        15600                                                                                       
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL*12 AS ANNUAL_SALARY , (SAL*12)/2 AS HALF_TERM_SALARY
+  2* FROM EMP
+SQL> /
+
+ANNUAL_SALARY HALF_TERM_SALARY                                                                      
+------------- ----------------                                                                      
+         9600             4800                                                                      
+        19200             9600                                                                      
+        15000             7500                                                                      
+        35700            17850                                                                      
+        15000             7500                                                                      
+        34200            17100                                                                      
+        29400            14700                                                                      
+        36000            18000                                                                      
+        60000            30000                                                                      
+        18000             9000                                                                      
+        13200             6600                                                                      
+        11400             5700                                                                      
+        36000            18000                                                                      
+        15600             7800                                                                      
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, (SAL+0.15(SAL))
+  2* FROM EMP
+SQL> /
+SELECT ENAME, (SAL+0.15(SAL))
+                       *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL+0.15*SAL
+  2* FROM EMP
+SQL> /
+
+ENAME      SAL+0.15*SAL                                                                             
+---------- ------------                                                                             
+SMITH               920                                                                             
+ALLEN              1840                                                                             
+WARD             1437.5                                                                             
+JONES           3421.25                                                                             
+MARTIN           1437.5                                                                             
+BLAKE            3277.5                                                                             
+CLARK            2817.5                                                                             
+SCOTT              3450                                                                             
+KING               5750                                                                             
+TURNER             1725                                                                             
+ADAMS              1265                                                                             
+JAMES            1092.5                                                                             
+FORD               3450                                                                             
+MILLER             1495                                                                             
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL+0.15*SAL AS HIKE_SALARY
+  2* FROM EMP
+SQL> /
+
+ENAME      HIKE_SALARY                                                                              
+---------- -----------                                                                              
+SMITH              920                                                                              
+ALLEN             1840                                                                              
+WARD            1437.5                                                                              
+JONES          3421.25                                                                              
+MARTIN          1437.5                                                                              
+BLAKE           3277.5                                                                              
+CLARK           2817.5                                                                              
+SCOTT             3450                                                                              
+KING              5750                                                                              
+TURNER            1725                                                                              
+ADAMS             1265                                                                              
+JAMES           1092.5                                                                              
+FORD              3450                                                                              
+MILLER            1495                                                                              
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, (0.15*SAL)+SAL AS HIKE_SALARY
+  2* FROM EMP
+SQL> /
+
+ENAME      HIKE_SALARY                                                                              
+---------- -----------                                                                              
+SMITH              920                                                                              
+ALLEN             1840                                                                              
+WARD            1437.5                                                                              
+JONES          3421.25                                                                              
+MARTIN          1437.5                                                                              
+BLAKE           3277.5                                                                              
+CLARK           2817.5                                                                              
+SCOTT             3450                                                                              
+KING              5750                                                                              
+TURNER            1725                                                                              
+ADAMS             1265                                                                              
+JAMES           1092.5                                                                              
+FORD              3450                                                                              
+MILLER            1495                                                                              
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, (0.19*SAL)-SAL AS HIKE_SALARY
+  2* FROM EMP
+SQL> /
+
+ENAME      HIKE_SALARY                                                                              
+---------- -----------                                                                              
+SMITH             -648                                                                              
+ALLEN            -1296                                                                              
+WARD           -1012.5                                                                              
+JONES         -2409.75                                                                              
+MARTIN         -1012.5                                                                              
+BLAKE          -2308.5                                                                              
+CLARK          -1984.5                                                                              
+SCOTT            -2430                                                                              
+KING             -4050                                                                              
+TURNER           -1215                                                                              
+ADAMS             -891                                                                              
+JAMES           -769.5                                                                              
+FORD             -2430                                                                              
+MILLER           -1053                                                                              
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL-0.19 AS HIKE_SALARY
+  2* FROM EMP
+SQL> /
+
+ENAME      HIKE_SALARY                                                                              
+---------- -----------                                                                              
+SMITH           799.81                                                                              
+ALLEN          1599.81                                                                              
+WARD           1249.81                                                                              
+JONES          2974.81                                                                              
+MARTIN         1249.81                                                                              
+BLAKE          2849.81                                                                              
+CLARK          2449.81                                                                              
+SCOTT          2999.81                                                                              
+KING           4999.81                                                                              
+TURNER         1499.81                                                                              
+ADAMS          1099.81                                                                              
+JAMES           949.81                                                                              
+FORD           2999.81                                                                              
+MILLER         1299.81                                                                              
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL-0.19 AS DEDUCTION
+  2* FROM EMP
+SQL> /
+
+ENAME       DEDUCTION                                                                               
+---------- ----------                                                                               
+SMITH          799.81                                                                               
+ALLEN         1599.81                                                                               
+WARD          1249.81                                                                               
+JONES         2974.81                                                                               
+MARTIN        1249.81                                                                               
+BLAKE         2849.81                                                                               
+CLARK         2449.81                                                                               
+SCOTT         2999.81                                                                               
+KING          4999.81                                                                               
+TURNER        1499.81                                                                               
+ADAMS         1099.81                                                                               
+JAMES          949.81                                                                               
+FORD          2999.81                                                                               
+MILLER        1299.81                                                                               
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL+500 AS INCENTIVE
+  2* FROM EMP
+SQL> /
+
+ENAME       INCENTIVE                                                                               
+---------- ----------                                                                               
+SMITH            1300                                                                               
+ALLEN            2100                                                                               
+WARD             1750                                                                               
+JONES            3475                                                                               
+MARTIN           1750                                                                               
+BLAKE            3350                                                                               
+CLARK            2950                                                                               
+SCOTT            3500                                                                               
+KING             5500                                                                               
+TURNER           2000                                                                               
+ADAMS            1600                                                                               
+JAMES            1450                                                                               
+FORD             3500                                                                               
+MILLER           1800                                                                               
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT EMPNO, ENAME, JOB , SAL, MGR, COMM, SAL * 12 AS ANNUAL_SAL
+  2* FROM EMP
+SQL> /
+
+     EMPNO ENAME      JOB              SAL        MGR       COMM ANNUAL_SAL                         
+---------- ---------- --------- ---------- ---------- ---------- ----------                         
+      7369 SMITH      CLERK            800       7902                  9600                         
+      7499 ALLEN      SALESMAN        1600       7698        300      19200                         
+      7521 WARD       SALESMAN        1250       7698        500      15000                         
+      7566 JONES      MANAGER         2975       7839                 35700                         
+      7654 MARTIN     SALESMAN        1250       7698       1400      15000                         
+      7698 BLAKE      MANAGER         2850       7839                 34200                         
+      7782 CLARK      MANAGER         2450       7839                 29400                         
+      7788 SCOTT      ANALYST         3000       7566                 36000                         
+      7839 KING       PRESIDENT       5000                            60000                         
+      7844 TURNER     SALESMAN        1500       7698          0      18000                         
+      7876 ADAMS      CLERK           1100       7788                 13200                         
+      7900 JAMES      CLERK            950       7698                 11400                         
+      7902 FORD       ANALYST         3000       7566                 36000                         
+      7934 MILLER     CLERK           1300       7782                 15600                         
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DISTINCT SAL 
+  2* FROM EMP
+SQL> /
+
+       SAL                                                                                          
+----------                                                                                          
+      2450                                                                                          
+      5000                                                                                          
+      1300                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2975                                                                                          
+      1100                                                                                          
+      3000                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1500                                                                                          
+       950                                                                                          
+
+12 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT EMP.*, SAL*12 AS ANNUAL_SALARY
+  2* FROM EMP
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO ANNUAL_SALARY 
+---------- ---------- --------- ---------- --------- ---------- ---------- ---------- ------------- 
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20          9600 
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30         19200 
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30         15000 
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20         35700 
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30         15000 
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30         34200 
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10         29400 
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20         36000 
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10         60000 
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30         18000 
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20         13200 
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30         11400 
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20         36000 
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10         15600 
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DISTINCT DEPTNO 
+  2* FROM EMP
+SQL> 
+SQL> /
+
+    DEPTNO                                                                                          
+----------                                                                                          
+        30                                                                                          
+        20                                                                                          
+        10                                                                                          
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DISTINCT MGR
+  2* FROM EMP
+SQL> /
+
+       MGR                                                                                          
+----------                                                                                          
+      7839                                                                                          
+                                                                                                    
+      7782                                                                                          
+      7698                                                                                          
+      7902                                                                                          
+      7566                                                                                          
+      7788                                                                                          
+
+7 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME
+  2  FROM EMP
+  3* WHERE DEPTNO = 10
+SQL> /
+
+ENAME                                                                                               
+----------                                                                                          
+CLARK                                                                                               
+KING                                                                                                
+MILLER                                                                                              
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL
+  2  FROM EMP
+  3* WHERE SAL > 1200
+SQL> /
+
+ENAME             SAL                                                                               
+---------- ----------                                                                               
+ALLEN            1600                                                                               
+WARD             1250                                                                               
+JONES            2975                                                                               
+MARTIN           1250                                                                               
+BLAKE            2850                                                                               
+CLARK            2450                                                                               
+SCOTT            3000                                                                               
+KING             5000                                                                               
+TURNER           1500                                                                               
+FORD             3000                                                                               
+MILLER           1300                                                                               
+
+11 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL
+  2  FROM EMP
+  3* WHERE MGR = 7698
+SQL> /
+
+ENAME             SAL                                                                               
+---------- ----------                                                                               
+ALLEN            1600                                                                               
+WARD             1250                                                                               
+MARTIN           1250                                                                               
+TURNER           1500                                                                               
+JAMES             950                                                                               
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL*12 AS ANNUAL_SAL
+  2  FROM EMP
+  3* WHERE DEPTNO = 20
+SQL> /
+
+ANNUAL_SAL                                                                                          
+----------                                                                                          
+      9600                                                                                          
+     35700                                                                                          
+     36000                                                                                          
+     13200                                                                                          
+     36000                                                                                          
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, SAL
+  2  FROM EMP
+  3* WHERE SAL<3000
+SQL> /
+
+ENAME             SAL                                                                               
+---------- ----------                                                                               
+SMITH             800                                                                               
+ALLEN            1600                                                                               
+WARD             1250                                                                               
+JONES            2975                                                                               
+MARTIN           1250                                                                               
+BLAKE            2850                                                                               
+CLARK            2450                                                                               
+TURNER           1500                                                                               
+ADAMS            1100                                                                               
+JAMES             950                                                                               
+MILLER           1300                                                                               
+
+11 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT ENAME, MGR, DEPTNO, SAL
+  2  FROM EMP
+  3* WHERE MGR = 7698
+SQL> /
+
+ENAME             MGR     DEPTNO        SAL                                                         
+---------- ---------- ---------- ----------                                                         
+ALLEN            7698         30       1600                                                         
+WARD             7698         30       1250                                                         
+MARTIN           7698         30       1250                                                         
+TURNER           7698         30       1500                                                         
+JAMES            7698         30        950                                                         
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING MAX(SAL) > AVG(SAL)
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        30       2850 1566.66667                                                                    
+        20       3000       2175                                                                    
+        10       5000 2916.66667                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING AVG(SAL) BETWEEN 1000 AND 2000
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        30       2850 1566.66667                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING AVG(SAL) NOT BETWEEN 1000 AND 2000
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        20       3000       2175                                                                    
+        10       5000 2916.66667                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING COUNT(*) >= 2
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        30       2850 1566.66667                                                                    
+        20       3000       2175                                                                    
+        10       5000 2916.66667                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING COUNT(*) > 2
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        30       2850 1566.66667                                                                    
+        20       3000       2175                                                                    
+        10       5000 2916.66667                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO, MAX(SAL), AVG(SAL)
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING COUNT(*) > 3
+SQL> /
+
+    DEPTNO   MAX(SAL)   AVG(SAL)                                                                    
+---------- ---------- ----------                                                                    
+        30       2850 1566.66667                                                                    
+        20       3000       2175                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DEPTNO
+  2  FROM EMP
+  3  GROUP BY DEPTNO
+  4* HAVING COUNT(*) > 3
+SQL> /
+
+    DEPTNO                                                                                          
+----------                                                                                          
+        30                                                                                          
+        20                                                                                          
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL
+  2* FROM EMP
+  3  /
+
+       SAL                                                                                          
+----------                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1250                                                                                          
+      2975                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2450                                                                                          
+      3000                                                                                          
+      5000                                                                                          
+      1500                                                                                          
+      1100                                                                                          
+       950                                                                                          
+      3000                                                                                          
+      1300                                                                                          
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL
+  2  FROM EMP
+  3* ORDER BY SAL
+SQL> /
+
+       SAL                                                                                          
+----------                                                                                          
+       800                                                                                          
+       950                                                                                          
+      1100                                                                                          
+      1250                                                                                          
+      1250                                                                                          
+      1300                                                                                          
+      1500                                                                                          
+      1600                                                                                          
+      2450                                                                                          
+      2850                                                                                          
+      2975                                                                                          
+      3000                                                                                          
+      3000                                                                                          
+      5000                                                                                          
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DISTINCT SAL
+  2  FROM EMP
+  3* ORDER BY SAL
+SQL> /
+
+       SAL                                                                                          
+----------                                                                                          
+       800                                                                                          
+       950                                                                                          
+      1100                                                                                          
+      1250                                                                                          
+      1300                                                                                          
+      1500                                                                                          
+      1600                                                                                          
+      2450                                                                                          
+      2850                                                                                          
+      2975                                                                                          
+      3000                                                                                          
+      5000                                                                                          
+
+12 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DISTINCT SAL
+  2  FROM EMP
+  3* ORDER BY SAL DESC
+SQL> /
+
+       SAL                                                                                          
+----------                                                                                          
+      5000                                                                                          
+      3000                                                                                          
+      2975                                                                                          
+      2850                                                                                          
+      2450                                                                                          
+      1600                                                                                          
+      1500                                                                                          
+      1300                                                                                          
+      1250                                                                                          
+      1100                                                                                          
+       950                                                                                          
+       800                                                                                          
+
+12 rows selected.
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1  SELECT *
+  2  FROM EMP
+  3  WHERE SAL > (SELECT SAL 
+  4  	     FROM EMP
+  5* 	     WHERE ENAME = 'SCOTT')
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO               
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------               
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               
+
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO               
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------               
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20               
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30               
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30               
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20               
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30               
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30               
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10               
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20               
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30               
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20               
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30               
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20               
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10               
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT * 
+  2  FROM EMP
+  3* WHERE SAL >= (SELECT SAL FROM EMP WHERE ENAME = 'SCOTT')
+SQL> /
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO               
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------               
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20               
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10               
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20               
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DNAME 
+  2  FROM DEPT
+  3  WHERE DEPTNO = (SELECT DEPTNO 
+  4  		FROM EMP 
+  5  		WHERE SAL > (SELECT * 
+  6  			     FROM EMP 
+  7* 			     WHERE ENAME ='SCOTT'))
+SQL> /
+		WHERE SAL > (SELECT * 
+		             *
+ERROR at line 5:
+ORA-00913: too many values 
+
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT DNAME 
+  2  FROM DEPT
+  3  WHERE DEPTNO = (SELECT DEPTNO 
+  4  		FROM EMP 
+  5  		WHERE SAL > (SELECT SAL 
+  6  			     FROM EMP 
+  7* 			     WHERE ENAME ='SCOTT'))
+SQL> /
+
+DNAME                                                                                               
+--------------                                                                                      
+ACCOUNTING                                                                                          
+
+SQL> SELECT * FROM DEPT;
+
+    DEPTNO DNAME          LOC                                                                       
+---------- -------------- -------------                                                             
+        10 ACCOUNTING     NEW YORK                                                                  
+        20 RESEARCH       DALLAS                                                                    
+        30 SALES          CHICAGO                                                                   
+        40 OPERATIONS     BOSTON                                                                    
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT MAX(SAL)
+  2  FROM EMP
+  3  WHERE SAL < (SELECT MAX(SAL)
+  4  		FROM EMP

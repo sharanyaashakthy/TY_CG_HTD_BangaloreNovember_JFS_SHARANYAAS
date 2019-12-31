@@ -1,0 +1,93 @@
+SQL> select distinct sal from emp;
+
+       SAL                                                                                          
+----------                                                                                          
+      2450                                                                                          
+      5000                                                                                          
+      1300                                                                                          
+      1250                                                                                          
+      2850                                                                                          
+      2975                                                                                          
+      1100                                                                                          
+      3000                                                                                          
+       800                                                                                          
+      1600                                                                                          
+      1500                                                                                          
+       950                                                                                          
+
+12 rows selected.
+
+SQL> select distinct sal,empno from emp;
+
+       SAL      EMPNO                                                                               
+---------- ----------                                                                               
+      2975       7566                                                                               
+      2450       7782                                                                               
+      1100       7876                                                                               
+      1250       7521                                                                               
+      1500       7844                                                                               
+      1250       7654                                                                               
+      5000       7839                                                                               
+      1300       7934                                                                               
+      1600       7499                                                                               
+      3000       7788                                                                               
+       950       7900                                                                               
+      2850       7698                                                                               
+      3000       7902                                                                               
+       800       7369                                                                               
+
+14 rows selected.
+
+SQL> spool off
+SQL> ED
+Wrote file afiedt.buf
+
+  1* select distinct sal,empno from emp
+SQL> SELECT SAL*12 FROM EMP;
+
+    SAL*12                                                                                          
+----------                                                                                          
+      9600                                                                                          
+     19200                                                                                          
+     15000                                                                                          
+     35700                                                                                          
+     15000                                                                                          
+     34200                                                                                          
+     29400                                                                                          
+     36000                                                                                          
+     60000                                                                                          
+     18000                                                                                          
+     13200                                                                                          
+     11400                                                                                          
+     36000                                                                                          
+     15600                                                                                          
+
+14 rows selected.
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT SAL*12 AS ANNUAL_SALARY
+  2* FROM EMP
+SQL> /
+
+ANNUAL_SALARY                                                                                       
+-------------                                                                                       
+         9600                                                                                       
+        19200                                                                                       
+        15000                                                                                       
+        35700                                                                                       
+        15000                                                                                       
+        34200                                                                                       
+        29400                                                                                       
+        36000                                                                                       
+        60000                                                                                       
+        18000                                                                                       
+        13200                                                                                       
+        11400                                                                                       
+        36000                                                                                       
+        15600                                                                                       
+
+14 rows selected.
+
+SQL> spool off

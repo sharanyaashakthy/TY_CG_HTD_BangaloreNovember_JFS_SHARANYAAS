@@ -1,0 +1,999 @@
+
+ 1  select * from emp
+ 2* where deptno = 10 or deptno= 20
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select 'Mr. ' || ename || 'your salary is ' || sal
+ 2  from emp
+ 3* where deptno = 10 or deptno= 20
+QL> /
+
+MR.'||ENAME||'YOURSALARYIS'||SAL
+--------------------------------------------------------------------
+r. SMITHyour salary is 800
+r. JONESyour salary is 2975
+r. CLARKyour salary is 2450
+r. SCOTTyour salary is 3000
+r. KINGyour salary is 5000
+r. ADAMSyour salary is 1100
+r. FORDyour salary is 3000
+r. MILLERyour salary is 1300
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where deptno in (10,20)
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where deptno not in (10,20)
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where deptno between 1000 and 2000
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where sal between 1000 and 2000
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where sal not between 1000 and 2000
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like (%s)
+QL> /
+here ename like (%s)
+                 *
+RROR at line 3:
+RA-00911: invalid character
+
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%s')
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%S')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('S%')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%S%')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%A%A%')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('____')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where hiredate like ('%81')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+
+0 rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where sal like ('___')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%_%')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+4 rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%!_%') escape '!'
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%@_%') escape '@'
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%#_%') escape '#'
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%$_%') escape '$'
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%(_%') escape '('
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename like ('%1_%') escape '1'
+QL> /
+
+o rows selected
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename not like (%s%)
+QL> /
+here ename not like (%s%)
+                     *
+RROR at line 3:
+RA-00911: invalid character
+
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename not like (%S%)
+QL> /
+here ename not like (%S%)
+                     *
+RROR at line 3:
+RA-00911: invalid character
+
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where ename not like ('%S%')
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+ rows selected.
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where comm is null
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+0 rows selected.
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where MGR is null
+QL> 
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where EMPNO is null
+QL> /
+
+o rows selected
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where EMPNO is NOT null
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+     7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+     7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+     7839 KING       PRESIDENT            17-NOV-81       5000                    10
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+     7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+     7900 JAMES      CLERK           7698 03-DEC-81        950                    30
+     7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+     7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+
+4 rows selected.
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* where COMM is NOT null
+QL> /
+
+    EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+--------- ---------- --------- ---------- --------- ---------- ---------- ----------
+     7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+     7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+     7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+     7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+
+QL> select avg(sal) from emp
+ 2  /
+
+ AVG(SAL)
+---------
+073.21429
+
+QL> ed
+rote file afiedt.buf
+
+ 1* select MAX(sal) from emp
+QL> /
+
+ MAX(SAL)
+---------
+     5000
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select MIN(sal) from emp
+QL> /
+
+ MIN(SAL)
+---------
+      800
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select SUM(sal) from emp
+QL> /
+
+ SUM(SAL)
+---------
+    29025
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select COUNT(sal) from emp
+QL> /
+
+OUNT(SAL)
+---------
+       14
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select COUNT(COMM) from emp
+QL> /
+
+OUNT(COMM)
+----------
+         4
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select COUNT(MGR) from emp
+QL> /
+
+OUNT(MGR)
+---------
+       13
+
+QL> ED
+rote file afiedt.buf
+
+ 1* select SUM(COMM) from emp
+QL> /
+
+SUM(COMM)
+---------
+     2200
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select SUM(COMM) /* MRF ignore null values */
+ 2* from emp
+QL> /
+
+UM(COMM)/*MRFIGNORENULLVALUES*/
+-------------------------------
+                           2200
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select SUM(COMM) -- MRF ignore null values --
+ 2* from emp
+QL> /
+
+UM(COMM)--MRFIGNORENULLVALUES--
+-------------------------------
+                           2200
+
+QL> ed
+rote file afiedt.buf
+
+ 1  -- MRF ignore null values --
+ 2  select SUM(COMM)
+ 3* from emp
+ 4  /
+- MRF ignore null values --
+
+RROR at line 1:
+RA-24374: define not done before fetch or execute and fetch
+
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select SUM(COMM) -- MRF ignore null values --
+ 2* from emp
+ 3  /
+
+UM(COMM)--MRFIGNORENULLVALUES--
+-------------------------------
+                           2200
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select SUM(COMM), COMM
+ 2* from emp
+QL> /
+elect SUM(COMM), COMM
+                 *
+RROR at line 1:
+RA-00937: not a single-group group function
+
+
+QL> ed
+rote file afiedt.buf
+
+ 1  select SUM(COMM), MAX(COMM), MIN(COMM), AVG(SAL), COUNT(COMM)
+ 2* from emp
+QL> /
+
+SUM(COMM)  MAX(COMM)  MIN(COMM)   AVG(SAL) COUNT(COMM)
+--------- ---------- ---------- ---------- -----------
+     2200       1400          0 2073.21429           4
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select MAX(SUM(AVG(COMM)))
+ 2* from emp
+QL> /
+elect MAX(SUM(AVG(COMM)))
+              *
+RROR at line 1:
+RA-00935: group function is nested too deeply
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select MAX(SUM(COMM))
+ 2* from emp
+QL> /
+elect MAX(SUM(COMM))
+          *
+RROR at line 1:
+RA-00978: nested group function without GROUP BY
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select *
+ 2  from emp
+ 3* WHERE SAL = MAX(SAL)
+QL> /
+HERE SAL = MAX(SAL)
+           *
+RROR at line 3:
+RA-00934: group function is not allowed here
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select MAX(SAL,COMM)
+ 2* from emp
+QL> /
+elect MAX(SAL,COMM)
+      *
+RROR at line 1:
+RA-00909: invalid number of arguments
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  select SAL
+ 2  from emp
+ 3* GROUP BY SAL
+QL> /
+
+      SAL
+---------
+     2450
+     5000
+     1300
+     1250
+     2850
+     2975
+     1100
+     3000
+      800
+     1600
+     1500
+      950
+
+2 rows selected.
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT DEPTNO FROM EMP
+ 2* GROUP BY DEPTNO
+QL> /
+
+   DEPTNO
+---------
+       30
+       20
+       10
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT COUNT(DEPTNO)
+ 2  FROM EMP
+ 3* GROUP BY DEPTNO
+QL> /
+
+OUNT(DEPTNO)
+------------
+           6
+           5
+           3
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT COUNT(DEPTNO)
+ 2* FROM EMP
+QL> /
+
+OUNT(DEPTNO)
+------------
+          14
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT COUNT(DEPTNO), DEPTNO
+ 2  FROM EMP
+ 3* GROUP BY DEPTNO
+QL> 
+QL> /
+
+OUNT(DEPTNO)     DEPTNO
+------------ ----------
+           6         30
+           5         20
+           3         10
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT COUNT(DEPTNO), SAL
+ 2  FROM EMP
+ 3* GROUP BY DEPTNO
+QL> /
+ELECT COUNT(DEPTNO), SAL
+                     *
+RROR at line 1:
+RA-00979: not a GROUP BY expression
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT SUM(SAL)
+ 2  FROM EMP
+ 3* GROUP BY DEPTNO
+QL> /
+
+ SUM(SAL)
+---------
+     9400
+    10875
+     8750
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT AVG(SUM(SAL))
+ 2  FROM EMP
+ 3* GROUP BY DEPTNO
+QL> /
+
+VG(SUM(SAL))
+------------
+        9675
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT *
+ 2  FROM EMP
+ 3  WHERE SAL = MAX(SAL)
+ 4* GROUP BY DEPTNO
+QL> /
+HERE SAL = MAX(SAL)
+           *
+RROR at line 3:
+RA-00934: group function is not allowed here
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT *
+ 2  FROM EMP
+ 3  GROUP BY DEPTNO
+ 4* HAVING SAL = MAX(SAL)
+QL> /
+AVING SAL = MAX(SAL)
+      *
+RROR at line 4:
+RA-00979: not a GROUP BY expression
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT *
+ 2  FROM EMP
+ 3  GROUP BY SAL
+ 4* HAVING SAL = MAX(SAL)
+QL> /
+ELECT *
+      *
+RROR at line 1:
+RA-00979: not a GROUP BY expression
+
+
+QL> ED
+rote file afiedt.buf
+
+ 1  SELECT *
+ 2  FROM EMP
+ 3  GROUP BY SAL
+ 4* HAVING SAL = MAX(SAL)
+QL> 
+QL> 
+QL> spool offSQL> spool "D:\sql practice\day3.txt" append
+P2-0556: Invalid file name.
+QL> SQL> select * from emp
+P2-0734: unknown command beginning "SQL> selec..." - rest of line ignored.
+QL>   2  where sal > 1000 and sal<3000;
+QL> 
+QL>      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+P2-0734: unknown command beginning "EMPNO ENAM..." - rest of line ignored.
+QL> ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+QL>       7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+QL>       7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+QL>       7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+QL>       7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+QL>       7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+QL>       7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+QL>       7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+QL>       7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+QL>       7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+QL> 
+QL> 9 rows selected.
+QL> 
+QL> SQL> ed
+P2-0042: unknown command "SQL> ed" - rest of line ignored.
+QL> Wrote file afiedt.buf
+P2-0734: unknown command beginning "Wrote file..." - rest of line ignored.
+QL> 
+QL>   1  select * from emp
+QL>   2* where deptno = 10 or 20;
+P2-0734: unknown command beginning "2* where d..." - rest of line ignored.
+QL> SQL> /
+P2-0042: unknown command "SQL> /" - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> where deptno = 10 or 20;
+P2-0734: unknown command beginning "where dept..." - rest of line ignored.
+QL>                        *
+P2-0042: unknown command "*" - rest of line ignored.
+QL> ERROR at line 2:
+P2-0734: unknown command beginning "ERROR at l..." - rest of line ignored.
+QL> ORA-00911: invalid character
+P2-0734: unknown command beginning "ORA-00911:..." - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL> 
+QL> SQL> ed
+P2-0042: unknown command "SQL> ed" - rest of line ignored.
+QL> Wrote file afiedt.buf
+P2-0734: unknown command beginning "Wrote file..." - rest of line ignored.
+QL> 
+QL>   1  select * from emp
+QL>   2* where deptno = 10 or deptno= 20;
+P2-0734: unknown command beginning "2* where d..." - rest of line ignored.
+QL> SQL> /
+P2-0042: unknown command "SQL> /" - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> where deptno = 10 or deptno= 20;
+P2-0734: unknown command beginning "where dept..." - rest of line ignored.
+QL>                                *
+P2-0042: unknown command "*" - rest of line ignored.
+QL> ERROR at line 2:
+P2-0734: unknown command beginning "ERROR at l..." - rest of line ignored.
+QL> ORA-00911: invalid character
+P2-0734: unknown command beginning "ORA-00911:..." - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL> 
+QL> SQL> ed
+P2-0042: unknown command "SQL> ed" - rest of line ignored.
+QL> Wrote file afiedt.buf
+P2-0734: unknown command beginning "Wrote file..." - rest of line ignored.
+QL> 
+QL>   1  select * from emp
+QL>   2* where deptno = 10 or deptno= 20
+P2-0734: unknown command beginning "2* where d..." - rest of line ignored.
+QL> SQL> /
+P2-0042: unknown command "SQL> /" - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL>      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+P2-0734: unknown command beginning "EMPNO ENAM..." - rest of line ignored.
+QL> ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+QL>       7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+QL>       7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+QL>       7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
+QL>       7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
+QL>       7839 KING       PRESIDENT            17-NOV-81       5000                    10
+QL>       7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20
+QL>       7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
+QL>       7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+QL> 
+QL> 8 rows selected.
+QL> 
+QL> SQL> ed
+P2-0042: unknown command "SQL> ed" - rest of line ignored.
+QL> Wrote file afiedt.buf
+P2-0734: unknown command beginning "Wrote file..." - rest of line ignored.
+QL> 
+QL>   1  select 'Mr. ' || ename || 'your salary is ' || sal
+QL>   2  from emp
+QL>   3* where deptno = 10 or deptno= 20
+P2-0734: unknown command beginning "3* where d..." - rest of line ignored.
+QL> SQL> /
+P2-0042: unknown command "SQL> /" - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL> 'MR.'||ENAME||'YOURSALARYIS'||SAL
+P2-0734: unknown command beginning "'MR.'||ENA..." - rest of line ignored.
+QL> ---------------------------------------------------------------------
+QL> Mr. SMITHyour salary is 800
+P2-0734: unknown command beginning "Mr. SMITHy..." - rest of line ignored.
+QL> Mr. JONESyour salary is 2975
+P2-0734: unknown command beginning "Mr. JONESy..." - rest of line ignored.
+QL> Mr. CLARKyour salary is 2450
+P2-0734: unknown command beginning "Mr. CLARKy..." - rest of line ignored.
+QL> Mr. SCOTTyour salary is 3000
+P2-0734: unknown command beginning "Mr. SCOTTy..." - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> Mr. KINGyour salary is 5000
+P2-0734: unknown command beginning "Mr. KINGyo..." - rest of line ignored.
+QL> Mr. ADAMSyour salary is 1100
+P2-0734: unknown command beginning "Mr. ADAMSy..." - rest of line ignored.
+QL> Mr. FORDyour salary is 3000
+P2-0734: unknown command beginning "Mr. FORDyo..." - rest of line ignored.
+QL> Mr. MILLERyour salary is 1300
+P2-0734: unknown command beginning "Mr. MILLER..." - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL> 8 rows selected.
+QL> 
+QL> SQL> ed
+P2-0042: unknown command "SQL> ed" - rest of line ignored.
+QL> Wrote file afiedt.buf
+P2-0734: unknown command beginning "Wrote file..." - rest of line ignored.
+QL> 
+QL>   1  select *
+QL>   2  from emp
+QL>   3* where deptno in (10,20)
+P2-0734: unknown command beginning "3* where d..." - rest of line ignored.
+QL> SQL> /
+P2-0042: unknown command "SQL> /" - rest of line ignored.
+P2-0044: For a list of known commands enter HELP
+nd to leave enter EXIT.
+QL> 
+QL>      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+P2-0734: unknown command beginning "EMPNO ENAM..." - rest of line ignored.
+QL> ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+QL>       7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+QL>       7566 JONES      MANAGER         7839 02-APR-81       2975                    20
+QL>       7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
