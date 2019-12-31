@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form1</title>
+</head>
+<body>
+    <form action="#" method="POST" >
+
+    <fieldset>
+        <legend>Personal details</legend>
+        <label for="sky">FIRST NAME</label>
+        <input type="text" name="fname" id="sky">
+       Middle Name: <input type="text" name="fname"  placeholder="Enter your middle name" minlength="5" maxlength="10" > <br>
+       Last Name: <input type="text" name="lname" value="Shakthy " disabled > <br>
+       Password: <input type="password" name="password" placeholder="Enter yout password" required pattern="Shakthy2098"><br>
+    </fieldset>
+
+
+   <fieldset>
+   <input type="reset" name="" id=""> <br>
+   <input type="radio" name="gender" value = "male"> MALE <br>
+   <input type="radio" name="gender" value = "female" checked> FEMALE  <br>
+   <input type="submit" name="submit" ><br>
+   <button>Submit</button>
+   </fieldset>
+
+   <fieldset>
+   <!-- Multiple options -->
+   <input type="checkbox" name="lang" value="Java">Java <br>
+   <input type="checkbox" name="lang" value="SQL"> SQL <br>
+   <input type="checkbox" name="lang" value="WebTech"> WebTech <br>
+   </fieldset>
+
+   <fieldset>
+   <!-- dropdown -->
+   <select name="Cartoons" size="3" id="">
+       <option value="Tom & Jerry"> Tom & Jerry</option>
+       <option value="Chota Bheem"> Chota Bheem</option>
+       <option value="Dora"> Dora</option>
+       <option value="Bandelaro"> Bandelaro</option> <br>
+    </select>
+    </fieldset>
+
+       <input type="file" name="upload a file"> <br>
+
+       <textarea name="Story" id="" cols="30" rows="10"></textarea><br>
+
+       <input list="languages">
+       <datalist id="languages">
+           <option value="Tamizh"> Tamizh</option>
+           <option value="English">English</option>
+           <option value="Hindi">Hindi</option>
+           <option value="Kannada">Kannada</option>
+       </datalist> <br>
+
+       <input type="datetime-local" > <br>
+
+       Email <input type="email"> <br>
+       URL <input type="url"> <br>
+       Number <input type="number" min="10" max="100" step="2"> <br>
+
+    <audio controls>
+        <source src="" type="audio/mp3">
+    </audio>
+    <video controls>
+     <Source src="C:\Users\Administrator\Downloads\pop songs\baibee.mp4" type="video/mp4">
+     </video>   
+ 
+</form>
+</body>
+</html>

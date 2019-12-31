@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+	<head>
+		<title>WELCOME CODE</title>
+	</head>
+	<body>
+		<h1>HELLO HTML</h1>
+		<h2>HELLO HTML</h2>
+		<h3>HELLO HTML</h3>
+		<h4>HELLO HTML</h4>
+		<h5>HELLO HTML</h5>
+		<h6>HELLO HTML</h6>
+		<b>HELLO HTML</b>
+		<strong>HELLO HTML</strong>
+	</body>
+</html>

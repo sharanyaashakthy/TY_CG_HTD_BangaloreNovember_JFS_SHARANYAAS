@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>	
+		<title> TIMETABLE </title>
+	</head>
+	<body>
+		<table border="4" height = "50" width = "50" cellspacing = "15"
+		       cellpadding = "15">
+			<caption><h1> TIME TABLE </sh1></caption>
+		<thead> 
+			<tr>
+				<th> DAYS  </th>
+				<th> 9:30-10:30   </th>
+				<th> 10:30-11:30  </th>
+				<th> 11:30-12:30  </th>
+				<th> 12:30-1:00   </th>
+				<th> 1:00-2.00    </th>
+				<th> 2:00-3:00    </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> MON </td>
+				<td> MATH </td>
+				<td> GAMES </td>
+				<td> SOCIAL </td>
+				<td rowspan = "6"> BREAK </td>
+				<td> EVS </td>
+				<td> ENG </td>
+			</tr>
+			<tr>
+				<td> TUE </td>
+				<td> ENG </td>
+				<td> SOCIAL </td>
+				<td> HINDI </td>
+				<td> TAMIL </td>
+				<td> MATH </td>
+			</tr>
+			<tr>
+				<td> WED </td>
+				<td> HINDI </td>
+				<td> GK </td>
+				<td> P.E.T </td>
+				<td> W.E </td>
+				<td> W.E </td>
+			</tr>
+			<tr>
+				<td> THUR </td>
+				<td> HINDI </td>
+				<td> IQ </td>
+				<td> MATH </td>
+				<td> MATH </td>
+				<td> EVS </td>
+			</tr>
+			<tr>
+				<td> FRI </td>
+				<td> ENG </td>
+				<td colspan="2"> MATH </td>
+				<td> EVS </td>
+				<td> SOCIAL </td>
+			</tr>
+			<tr>
+				<td> SAT </td>
+				<td> SOCIAL </td>
+				<td> GAMES </td>
+				<td> ENG </td>
+				<td colspan="2"> MATH </td>
+		
+			</tr>
+		</tbody>
+		<tfoot>
+			
+		</tfoot>
+		</table>
+	</body>
+
+
+</html>

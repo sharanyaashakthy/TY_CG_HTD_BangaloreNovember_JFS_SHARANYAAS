@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./wpregister.css">
+</head>
+<body>
+        <ul>
+                <li><a href="wphome.html">Home </a></li>
+                <li><a href="wpabout.html" > About</a></li>
+                <li> <a href="wpcontact.html" > Contact</a></li>
+                <li style="float: right"> <a href="wplogin.html" > Login</a></li>
+                <li style="float: right"><a href="wpregister.html" > Register</a></li>
+    </ul>
+    <form action="#" method="POST">
+        <center>
+        <img src="./f.png" alt="" height="100" width="100" >
+        <h2> REGISTRATION FORM</h2> <br>
+
+        <input type="radio" name="gender" value="male">Mr 
+        <input type="radio" name="gender" value=" unmarried female">Ms
+        <input type="radio" name="gender" value=" married female">Mrs <br>
+
+        <label for="firstname">FIRST NAME</label>
+        <input type="text" name="fname" id="firstname" placeholder="Enter your first name"> <br>
+        <label for="lastname">LAST NAME</label>
+        <input type="text" name="lname" id="lastname" placeholder="Enter your last name"> <br>
+
+        <label for="mail">MAIL ADDRESS1</label>
+        <input type="email" name="emailname" id="mail" > <br>
+        <label for="mail">MAIL ADDRESS2</label>
+        <input type="email" name="emailname" id="mail" > <br>
+
+        <label for="city">CITY</label>
+        <input type="text" name="cityname" id="city"> <br>
+
+        <label for="state">STATE</label>
+        
+        <!-- dropdown -->
+        <select name="state"  id="">
+        <option value="Tamilnadu"> Tamilnadu</option>
+        <option value="Kerala"> Kerala</option>
+        <option value="Karnataka"> Karnataka</option>
+        <option value="AndhraPradesh"> AndhraPradesh</option> <br>
+        </select><br>
+
+        <label for="zip">ZIP</label>
+        <input type="text" name="zipname" id="zip"> <br>
+
+        <label for="uploadphoto">Upload Photo</label>
+        <input type="file" name="photoname" id="uploadphoto"> <br>
+
+        <label for="E-mail">E-mail</label>
+        <input type="email" name="emailname" id="E-mail"> <br>
+
+        <label for="Mobile">Mobile no.</label>
+        <input type="text" name="mobilename" id="Mobile" value="+91" max="10"> <br>
+
+        <!-- Multiple options -->
+        <label for="languages">Languages Known</label> <br>
+        <input type="checkbox" name="lang" value="Gujarathi">Gujarathi <br>
+        <input type="checkbox" name="lang" value="Hindi"> Hindi <br>
+        <input type="checkbox" name="lang" value="English"> English <br>
+        <input type="checkbox" name="lang" value="Marathi"> Marathi <br>
+
+        <label for="Additional_info">Additional Information</label>
+        <input type="text" name="Additionalinfoname" id="Additional_info"> <br>
+
+        <input type="submit" name="" id="">
+        <input type="reset" name="" id="">
+    </center>
+    </form>
+</body>
+</html>

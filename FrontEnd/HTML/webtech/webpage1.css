@@ -1,0 +1,27 @@
+ul li  {
+    list-style: none;
+    display: inline;
+}
+
+ul li a{
+    padding: 30px ;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    color: white;
+}
+img{
+    box-shadow: white 4px 4px;
+    border-radius: 50%;
+}
+figure{
+    margin: 30px;
+    padding: 20px;
+    box-shadow: gainsboro ;
+    color: white;
+}
+body{
+    background-color: lightcyan;
+    background-image: url(./background.gif);
+    background-size: cover;
+}

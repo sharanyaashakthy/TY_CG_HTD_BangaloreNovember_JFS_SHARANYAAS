@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebpageBS</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning" >
+                <a class="navbar-brand" href="#" >My Trip</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Transport</a>
+                    </li>
+
+                    <li class="nav-item">
+                            <a class="nav-link" href="#">Places</a>
+                          </li>
+                    <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li> -->
+                  </ul>
+
+                  <span class="navbar-text">
+                      <a href=".......">Login </a> 
+
+                  </span>
+
+                  <span class="navbar-text">
+                        <a href=".......">Register</a>
+  
+                    </span>
+                  
+                </div>
+              </nav>
+
+
+              <!-- slider -->
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <img src="./wb3.jpg" class="d-block w-100" alt="..." height="400" width="400">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./wb2.jpg" class="d-block w-100" alt="..."  height="400" width="400">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./wb1.jpg" class="d-block w-100" alt="..."  height="400" width="400">
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                <br>
+
+
+           
+ <!-- cards and images -->     
+<div class="container">
+        <div class="row">
+                
+            <div class="col-sm-4">
+                <h1>Ahamedabad</h1>
+                <img src="./akshardham_temple-ahmedabad.jpg" height="250" width="250" alt="">
+                <p>Ahamedabad, in Western India, is the largest city in the state of Gujarat. It also displays the spiritual leader's living quarters and artifacts</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div>
+            
+            <div class="col-sm-4">
+                <h1>Bihar</h1>
+                <img src="./1514010954_rajmachi.PNG.jpg" height="250" width="250" alt="">
+                <p>Bihar is a state in East India, bordering Nepal. Some important Buddhist pilgrimage sites including the Bodhi Tree under which buddha allegedly meditated.</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div>
+            <div class="col-sm-4">
+                <h1>Chandigarh</h1>
+                <img src="./7.jpg" height="250" width="250" alt="">
+                <p>Chandigarh, the capital of the northern Indian states of Punjab and Haryana, was designed by the Swiss-French mordenist architect, Le Corbusier.</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div>
+          
+            <div class="col-sm-4">
+                <h1>Delhi</h1>
+                <img src="./10.jpg" height="250" width="250" alt="">
+                <p>Delhi is the India's capital territory, is a massive metropolitan area in the country's North. Here, the sprawling Jama Masjid mosque and Red fort is present.</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div>
+            <div class="col-sm-4">
+                <h1>Rajasthan</h1>
+                <img src="./12.jpg" height="250" width="250" alt="">
+                <p>Rajasthan is a northern Indian state bordering Pakisthan.  jaipur, the Pink City, is the city palace and its palaces and forts are reminders of many kingdoms.</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div>
+            
+            <div class="col-sm-4">
+                <h1>Mumbai</h1>
+                <img src="./17.jpg" height="250" width="250" alt="">
+                <p>Mumbai is a densely populated city on India's West Coast. A  financial center, its India's largest city.</p>
+                <button type="button" class="btn btn-outline-primary">Book Now</button>
+            </div></div><br><br><br>
+    
+            <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Summer Icons</h5>
+                  
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Visit the most unique summer spots</h5>
+                  <p class="card-text">Time to visit the most splendid locations of the season</p>
+                  <a href="#" class="btn btn-primary">Click on for more details</a>
+                </div><br><br>
+              </div><br><br><br>
+    
+              <div class="card">
+                <div class="card-header">
+                  <h5>Coolest Spot</h5>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Spectorial venues for the Spring & Autumn</h5>
+                  <p class="card-text">Get to the cherishing regions of the season</p>
+                  <a href="#" class="btn btn-primary">Click on for more details</a>
+                </div>
+              </div>
+             
+                  
+        </div><br><br>
+       
+    <div class="row">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./download (4).jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Ahamedabad</h5>
+                <p class="card-text">Ahamedabad, in Western India, is the largest city in the state of Gujarat. It also displays the spiritual leader's living quarters and artifacts</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./28.jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Bihar</h5>
+                <p class="card-text">Bihar is a state in East India, bordering Nepal. Some important Buddhist pilgrimage sites including the Bodhi Tree under which buddha allegedly meditated.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./download (1).jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Chandigarh</h5>
+                <p class="card-text">Chandigarh, the capital of the northern Indian states of Punjab and Haryana, was designed by the Swiss-French mordenist architect, Le Corbusier.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./18.jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Delhi</h5>
+                <p class="card-text">Delhi is the India's capital territory, is a massive metropolitan area in the country's North. Here, the sprawling Jama Masjid mosque and Red fort is present.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./19.jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Rajasthan</h5>
+                <p class="card-text">Rajasthan is a northern Indian state bordering Pakisthan.  jaipur, the Pink City, is the city palace and its palaces and forts are reminders of many kingdoms.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="./download (5).jpg" height="100px" width="100px" style="border-radius: 50%;margin: 15px; box-shadow: 0 0 10px black"class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Mumbai</h5>
+                <p class="card-text">Mumbai is a densely populated city on India's West Coast. A  financial center, its India's largest city.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+
+
+
+
+            <footer>
+                    <a href="www.twitter.com">Twitter </a>
+                    <a href="www.facebook.com">Facebook </a>
+                    <a href="www.instagram.com">Instagram </a>
+
+            </footer>
+        
+            </div>
+    <script src="./jquery.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>

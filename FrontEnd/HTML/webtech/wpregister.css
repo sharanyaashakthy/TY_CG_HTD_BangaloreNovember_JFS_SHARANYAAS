@@ -1,0 +1,25 @@
+form{
+    border: black 2px solid;
+    padding: 20px;
+    margin: 20px;
+}
+body{
+    background-image: url() ; height: "10"; width: "10";
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+     background-blend-mode: lighten ;
+     background-color: lightyellow;
+    
+}
+ul li  {
+    list-style: none;
+    display: inline;
+}
+
+ul li a{
+    padding: 30px ;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
