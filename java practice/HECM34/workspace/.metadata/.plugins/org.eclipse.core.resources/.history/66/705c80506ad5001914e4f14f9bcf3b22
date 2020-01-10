@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Program5 {
+
+	public Program5() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Oracle {
+
+	public Oracle() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

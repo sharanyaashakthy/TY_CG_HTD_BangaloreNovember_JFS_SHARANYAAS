@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class SQLServer {
+
+	public SQLServer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

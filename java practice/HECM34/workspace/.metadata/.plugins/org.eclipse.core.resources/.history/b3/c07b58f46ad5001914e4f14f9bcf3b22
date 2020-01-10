@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Mozilla {
+
+	public Mozilla() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class E
+{
+	int x =10;
+	abstract void print();
+	abstract void print(int);
+
+}

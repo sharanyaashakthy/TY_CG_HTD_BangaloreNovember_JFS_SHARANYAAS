@@ -1,0 +1,7 @@
+package jsp.abstracts;
+
+abstract public class Connection
+{
+	abstract public void connect();
+	abstract public void disconnect();
+}

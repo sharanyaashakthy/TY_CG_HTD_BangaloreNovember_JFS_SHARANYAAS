@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class DB2 {
+
+	public DB2() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,44 @@
+package jsp.abstracts;
+import java.util.Scanner;
+
+public class Program7 
+{
+	public static void main(String[] args)
+	{
+		while(true)
+		{
+			System.out.println("enter your choice");
+			System.out.println("\n 1.Oracle \n 2.DB2 \n 3.SQLServer \n 4.exit(0)");
+			
+			Scanner sc = new Scanner(System.in);
+			int ch = sc.nextInt();
+			String choice=null, connect=null;
+			System.out.println("enter your choice");
+			System.out.println("\n 1.Connect \n 2.Disconnect");
+
+			
+			switch(ch)
+			{
+					case 1: if(choice == connect)
+								new Oracle().connect();
+							else
+								new Oracle().disconnect();
+							break;
+					case 2:if(choice == connect)
+								new DB2().connect();
+							else
+								new DB2().disconnect();
+							break;
+					case 3:if(choice == connect)
+								new SQLServer().connect();
+						   else
+							   	new SQLServer().disconnect();
+							break;
+					case 4: System.exit(0);
+							break;
+					default:System.out.println("invalid choice");
+			}
+		}
+	}
+
+}

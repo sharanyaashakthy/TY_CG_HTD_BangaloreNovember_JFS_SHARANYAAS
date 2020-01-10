@@ -1,0 +1,24 @@
+package jsp.abstracts;
+import java.util.Scanner;
+
+public class Program7 
+{
+	public static void main(String[] args)
+	{
+		while(true)
+		{
+			System.out.println("enter your choice");
+			System.out.println("1.Oracle \n 2.DB2 \n 3.SQLServer");
+			
+			Scanner sc = new Scanner(System.in);
+			int ch = sc.nextInt();
+			
+			switch(ch)
+			{
+			case 1:
+	
+			}
+		}
+	}
+
+}

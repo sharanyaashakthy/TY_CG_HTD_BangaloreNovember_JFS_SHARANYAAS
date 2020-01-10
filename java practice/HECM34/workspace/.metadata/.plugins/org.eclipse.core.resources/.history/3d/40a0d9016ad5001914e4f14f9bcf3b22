@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Monkeyy {
+
+	public Monkeyy() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

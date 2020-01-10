@@ -1,0 +1,15 @@
+package jsp.abstracts;
+
+public class Oracle extends Connection
+{
+	public void connect()
+	{
+		System.out.println("Oracle is connected");
+	}
+	public void disconnect()
+	{
+		System.out.println("Oracle is disconnected");
+	}
+
+
+}

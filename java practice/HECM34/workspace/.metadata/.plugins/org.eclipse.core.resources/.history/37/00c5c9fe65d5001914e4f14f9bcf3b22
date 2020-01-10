@@ -1,0 +1,12 @@
+package jsp.abstracts;
+
+abstract public class G
+{
+	char c = 'z';
+	public void print(int a)
+	{
+		System.out.println("in print(int a) method");
+	}
+	
+
+}

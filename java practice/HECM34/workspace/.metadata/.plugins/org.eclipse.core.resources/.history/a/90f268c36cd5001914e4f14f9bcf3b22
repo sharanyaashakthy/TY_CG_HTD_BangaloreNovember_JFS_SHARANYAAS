@@ -1,0 +1,14 @@
+package jsp.abstracts;
+
+public class DB2 
+{
+	public void connect()
+	{
+		System.out.println("DB2 is connected");
+	}
+	public void disconnect()
+	{
+		System.out.println("DB2 is disconnected");
+	}
+
+}

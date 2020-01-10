@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Animals {
+
+	public Animals() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

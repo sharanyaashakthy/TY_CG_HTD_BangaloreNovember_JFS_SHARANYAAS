@@ -1,0 +1,9 @@
+package jsp.abstracts;
+
+public class Opera {
+
+	public Opera() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

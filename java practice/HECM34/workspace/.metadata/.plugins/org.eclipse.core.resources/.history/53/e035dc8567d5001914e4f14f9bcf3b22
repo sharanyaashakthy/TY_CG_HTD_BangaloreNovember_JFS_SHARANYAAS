@@ -1,0 +1,21 @@
+package jsp.abstracts;
+
+public class Program3
+{
+	public static void main(String[] args)
+	{
+		H h = new H();
+		h.print(10,20);
+		h.z;
+		h.print(30);
+		h.y;
+		h.print();
+		h.x;
+		
+		
+		
+		
+		
+	}
+
+}
